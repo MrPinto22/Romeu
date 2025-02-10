@@ -1,0 +1,421 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 15%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7); 
+    padding: 10px 230px;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.logo-img {
+    width: 150px;
+    height: auto;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    display: inline-flex;
+}
+
+.menu ul li button {
+    background-color: #99AABF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.7);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    max-width: 100%;
+}
+
+.menu ul li button:hover {
+    background-color: rgba(255, 221, 147, 1.0);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+}
+
+
+/*footer*/
+footer {
+    margin-top: 100px;
+    background: url('img/fundofooter.png') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding-bottom: -1px;
+}
+
+.footer-top img {
+    width: 220px;
+    align-self: flex-start;
+    margin-left: -10px;
+}
+
+.footer-top p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    border-bottom: 2px solid black;
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.contact-info h3{
+    margin-top: 10px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 25.918px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.contact-info strong{
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20.803px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+.contact-info p{
+    margin-top: -10px;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 14.803px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contact-info, .contact-form {
+    width: 48%;  /* Ajusta a largura para que os campos fiquem lado a lado */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;  /* Espaço entre os campos */
+}
+
+/* Divisão para os campos da esquerda e da direita */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Campos lado a lado */
+.contact-info input, .contact-info textarea,
+.contact-form input, .contact-form textarea {
+    margin: 6px 0;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+/* Efeito de hover para os botões */
+.contact-form button:hover, .contact-info button:hover {
+    background-color: #d4af37; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Alinhar os campos de 'nome' e 'email' à esquerda */
+.contact-info input {
+    width: 100%;  /* Campos ocupam toda a largura disponível */
+}
+
+/* Alinhar os campos de 'cidade' e 'assunto' à direita */
+.contact-form input {
+    width: 100%;  /* Campos ocupam toda a largura disponível */
+}
+
+/* Caixa de mensagem ocupa toda a largura */
+.contact-info textarea, .contact-form textarea {
+    width: 100%;
+    height: 120px;
+}
+
+/* Botões */
+.contact-form button {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.contact-info button {
+    padding: 0;
+    font-size: 0.8em;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Estilo para a política de privacidade */
+.policy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    font-size: 1em;
+    margin-top: 10px;
+    width: 100%; /* Faz com que a política ocupe toda a largura disponível */
+    max-width: 600px; /* Limita a largura para evitar que fique excessivamente largo */
+}
+
+.policy label {
+    display: inline-flex; /* Faz com que o rádio e o texto fiquem na mesma linha */
+    align-items: center; /* Alinha rádio e texto na vertical */
+    font-size: 1em;
+    margin-bottom: 5px; /* Espaço entre as linhas */
+}
+
+.policy input[type="radio"] {
+    margin-right: 10px; /* Espaçamento entre o rádio e o texto */
+    width: 18px; /* Tamanho do rádio */
+    height: 18px; /* Tamanho do rádio */
+    border-radius: 50%; /* Torna o checkbox redondo (bola) */
+    border: 2px solid #333; /* Cor do contorno */
+    background-color: white; /* Cor de fundo */
+}
+
+.policy input[type="radio"]:checked {
+    background-color: #4CAF50; /* Cor do fundo quando selecionado */
+    border-color: #4CAF50; /* Cor da borda quando selecionado */
+}
+
+.policy span {
+    margin-bottom: 15px;
+    margin-left: 25px;
+    font-family: "Open Sans";
+    font-size: 1em;
+    color: #000000;
+}
+
+
+/* Footer inferior */
+.footer-bottom {
+    margin-top: 25px;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 1em;
+}
+
+.footer-bottom p{
+    margin-left: 200px;
+    margin-top: -1px;
+    
+}
+
+.footer-bottom div {
+    flex: 1;
+}
+
+.footer-bottom div:nth-child(3) {
+    text-align: right;
+    margin-right: -10px;
+}
+
+.social-media a {
+    margin: 0 12px;
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustar o menu para telas menores */
+    .menu-container {
+        flex-direction: row;
+        padding: 10px 20px;
+        justify-content: space-between;
+        width: 100%; /* Garantir que a container cubra toda a largura da tela */
+    }
+
+    /* Logo à esquerda */
+    .logo-img {
+        width: 100px; /* Ajustar o tamanho do logo */
+        height: auto;
+    }
+
+    /* Menu à direita em linha horizontal e ocupar toda a tela */
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px; /* Espaçamento mínimo entre as opções */
+        width: 100%; /* Garantir que o menu ocupe toda a largura */
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 5px; /* Diminuir ainda mais o espaço entre os itens */
+        margin: 0;
+        padding: 0;
+        flex-wrap: nowrap;
+        width: 100%; /* Garantir que a lista ocupe toda a largura */
+    }
+
+    .menu ul li button {
+        font-size: 9px; /* Diminuir mais o tamanho da fonte */
+        padding: 4px 8px; /* Diminuir ainda mais o padding */
+        background-color: #99AABF;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.7);
+        transition: background-color 0.3s, box-shadow 0.3s;
+        flex-shrink: 1; /* Garantir que os itens encolham se necessário */
+    }
+
+    .menu ul li button:hover {
+        background-color: rgba(255, 221, 147, 1.0);
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-top img {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-middle {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom p {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .footer-bottom div:nth-child(3) {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .titulo-secao-geral {
+        font-size: 32px;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .container-imagens {
+        flex-direction: column;
+    }
+
+    .imagem-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .subtitulo {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .botao-container {
+        margin-top: 20px;
+    }
+
+    .botao {
+        margin-right: 0;
+        padding: 10px 50px;
+        font-size: 1.2em;
+    }
+}

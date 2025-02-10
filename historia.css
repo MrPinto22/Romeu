@@ -1,0 +1,2073 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; 
+}
+
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 15%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 230px;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.logo-img { 
+    width: 150px;
+    height: auto;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    overflow: visible; /* Certificar que o dropdown não é cortado */
+}
+
+.menu ul {
+    
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    display: inline-flex;
+    position: relative; /* Necessário para o dropdown */
+}
+
+.menu ul li button {
+    background-color: #99AABF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.7);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.menu ul li button:hover {
+    background-color: rgba(255, 221, 147, 1.0);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilização do Dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* O menu inicia oculto */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    width: 100%; /* Diminuir largura */
+    min-width: 180px;
+    display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Garante que fica acima dos outros elementos */
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+    opacity: 0;
+    transform: translateY(10px); /* Efeito de deslizar para baixo */
+}
+
+/* Mostrar o dropdown ao passar o cursor */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cada item do dropdown */
+.dropdown-menu li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Estilizar os botões dentro do dropdown */
+.dropdown-menu li button {
+    text-align: left;
+    font-family: 'Open Sans',serif;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+/* Efeito de hover */
+.dropdown-menu li:hover {
+    background: #f7c663; /* Cor de destaque */
+    transform: scale(1.15); /* Efeito de leve aumento */
+}
+
+/* Efeito de hover nos botões */
+.dropdown-menu li button:hover {
+    color: white;
+}
+
+
+/*containner 1*/
+.container {
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 50px 70px 30px; /* Reduzir o padding superior para aproximar o conteúdo do menu */
+    max-width: 5400px;
+    margin: 70px auto; /* Reduzir a margem superior */
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.light-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: #3d5451;
+    margin-bottom: 15px;
+}
+
+.bold-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 60px;
+    color: #3d5451;
+    margin-bottom: 30px;
+}
+
+.image {
+    width: 500%;
+    max-width: 850px;
+    height: auto;
+    display: block;
+}
+
+.text-container {
+    flex: 1;
+    text-align: left;
+    margin-left: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 120px; /* Adicionar espaço acima da text-container para descer */
+}
+
+.text-container p {
+    font-size: 12px;
+    font-family: 'Open Sans',serif;
+    line-height: 1.5; /* Aumenta o espaço entre as linhas */
+}
+
+.mini-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-size: 32px;
+    margin-bottom: 5px; /* Diminuir o espaço entre o título e o texto */
+}
+
+/* Container com imagem de fundo */
+.image-section {
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url('img/Subtract_1.png');
+    background-size: 100% 100%;  
+    background-repeat: no-repeat;
+    background-position: center;  
+    width: 1500px; 
+    height: 1201px; 
+    color: white;
+    padding: 40px 20px;
+}
+
+/* Título com fundo cinza */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    background-color: #B2BCC6; /* Cinza */
+    color: white;
+    padding: 10px 20px;
+    width: 40%; 
+    text-align: left; 
+    margin-bottom: 20px;
+    margin-right: 800px; 
+}
+
+/* Wrapper para alinhar o texto e a imagem */
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; 
+}
+
+/* Texto à esquerda */
+.section-text {
+    font-family: 'Open Sans', serif;
+    color: black;
+    flex: 1;
+    margin-right: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400; 
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.2), /* Aumentando o deslocamento e intensidade da sombra preta */
+        -3px -3px 6px rgba(255, 255, 255, 0.8); /* Aumentando o deslocamento e intensidade da sombra branca */
+}
+
+/* Imagem à direita */
+.section-image {
+    margin-top:-500px;
+    max-width: 100%; 
+    object-fit: contain; 
+    height: auto; 
+}
+
+.qr-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+
+}
+
+.qr-image-container {
+    margin-top: 80px;
+    flex: 1 1 40%;
+    padding: 250px;
+    max-width: 500px;
+}
+
+.qr-image-container img {
+    margin-top: -170px;
+    margin-left: -10px;
+    width: 100%;
+    border: 10px solid #e2e2e2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.qr-text-container {
+    flex: 1 1 40%;
+    padding: 20px;
+    max-width: 500px;
+    text-align: justify;
+    margin-bottom: 100px;
+}
+
+.qr-text-container p {
+    font-size: 15px;
+    width: 500px;
+    margin-left: -200px;
+    font-family: 'Open Sans', serif;
+    color: #333;
+    line-height: 1.4;
+}
+
+.qr-highlight {
+    font-weight: bold;
+    color: #814c3c;
+}
+
+h2 {
+    margin-left: -460px;
+    font-family: 'Playfair Display', serif;
+    font-size: 85px;
+    font-weight: bold;
+    color: #814c3c;
+    position: relative;
+    text-align: right;
+    margin-top: 680px;
+}
+
+h2::before, h2::after {
+    content: "";
+    position: absolute;
+    left: -650px; /* Aumenta o tamanho das linhas para a esquerda */
+    width: calc(100% + 650px); /* Aumenta a largura das linhas */
+    height: 2px;
+    background-color: #814c3c;
+}
+
+h2::before {
+    top: -10px;
+}
+
+h2::after {
+    bottom: -10px;
+}
+
+
+/* Contêiner principal */
+.custom-container {
+    margin-top: 10px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Primeira seção com imagem à esquerda e texto à direita */
+  .custom-section-1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .custom-image-left {
+    margin-left: 50px;
+    width: 785px;
+    height: 622px;
+    flex-shrink: 0;
+  }
+  
+  .custom-text-right h3 {
+    margin-top: -250px;
+    margin-left: 50px;
+    width: 736px;
+    height: 35.918px;
+    flex-shrink: 0;
+    color: #B36454;
+    font-family: "Playfair Display";
+    font-size: 37.062px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+  }
+  
+  .custom-text-right p {
+    text-align: justify;
+    margin-top: -10px;
+    margin-left: 50px;
+    width: 536px;
+    height: 308px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  /* Segunda seção com título, texto à esquerda e imagens à direita */
+  .custom-section-2 {
+    margin-top: 20px;
+  }
+  
+  .custom-section-2 h1 {
+    margin-left: 50px;
+    color: #B36454;
+    font-family: "Playfair Display";
+    font-size: 40.884px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  
+  .custom-text-left {
+    margin-top: -10px;
+    margin-left: 50px;
+    width: 770px;
+    height: 215px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .custom-text-images-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .custom-images-right {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+  }
+  
+  .custom-small-image1 {
+    margin-left: -200px;
+    margin-top: -250px;
+    width: 103.878px;
+    height: 415.378px;
+    flex-shrink: 0;
+  }
+
+  .custom-small-image2 {
+    margin-right: 50px;
+    margin-top: -250px;
+    width: 421px;
+    height: 400.994px;
+    flex-shrink: 0;
+  }
+
+
+
+.container-imagens-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 200px;
+    padding: 0 20px;
+    margin-bottom: 140px; /* Adiciona mais espaço abaixo das imagens */
+}
+
+.imagem-esquerda-classe {
+    margin-left: 55px;
+    width: 315px;
+    height: 487.113px;
+    flex-shrink: 0;
+}
+
+.imagem-direita-classe {
+    margin-left: -50px;
+    width: 410px;
+    height: 548px;
+    flex-shrink: 0;
+}
+
+.titulo-secao {
+    margin-left: -110px;
+    margin-top: 0px;
+    text-align: center;
+    margin-bottom: -265px;
+    color: #B36454;
+    font-family: "Playfair Display";
+    font-size: 30.589px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.texto-centro {
+    margin-left: -100px;
+    margin-top: -150px;
+    text-align: justify;
+    width: 537px;
+    height: 265px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+/* Seção principal do azeite */
+.custom-section-azeite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -150px;
+  }
+  
+  .azeite-left {
+    width: 50%;
+  }
+  
+  .azeite-left h1 {
+    margin-left: 115px;
+    width: 727px;
+    height: 157.439px;
+    flex-shrink: 0;
+    color: #D3B473;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 118.543px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 45.046px;
+  }
+  
+  .azeite-left h3 {
+    margin-top: -100px;
+    margin-left: 170px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 30.608px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+  }
+  
+  .azeite-left .azeite-image {
+    margin-left: 170px;
+    width: 565px;
+    height: 469px;
+    flex-shrink: 0;
+  }
+  
+  .azeite-right {
+    margin-top: 15px;
+    margin-right: 300px;
+    width: 538px;
+    height: 251px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .azeite-right span{
+    font-weight: 700;
+  }
+  
+  /* Segunda parte da seção de azeite */
+  .custom-section-azeite-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens principais à esquerda */
+    margin-top: 20px;
+  }
+  
+  .azeite-text-left {
+    margin-left: 170px;
+    color: #D3B473;
+    font-family: "Playfair Display";
+    font-size: 29.811px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-variant: all-small-caps;
+  }
+  
+  .azeite-image-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha tudo à direita */
+    width: 50%;
+    margin-left: auto; /* Mantém a posição à direita */
+  }
+  
+  .azeite-text-right{
+    margin-right: 50px;
+    margin-top: -290px;
+    width: 240px;
+    height: 252px;
+    flex-shrink: 0;
+  }
+
+  .azeite-text-right h3{
+    margin-left: -350px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 35.811px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+  }
+
+  .azeite-text-right p{
+    padding: 90px;
+    margin-top: -120px;
+    margin-left: -440px;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .azeite-image-small {
+    margin-top: 70px;
+    margin-right: 201px;
+    width: 438px;
+    height: 745px;
+    flex-shrink: 0;
+  }
+  
+  .azeite-text-mini-left h3 {
+    margin-top: -800px;
+    margin-left: 170px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 30.608px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+  }
+  
+  .azeite-image-small-left {
+    width: 655px;
+    height: 569px;
+    flex-shrink: 0;
+    margin-left: 170px; /* Aumenta a distância da esquerda */
+}
+
+.azeite-text-mini-left p {
+    margin-top: 15px;
+    margin-left: 170px; /* Afastar o texto da esquerda */
+    width: 538px;
+    height: auto; /* Removemos altura fixa para melhor adaptação */
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bloco-curioso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.imagem-oliveira {
+    width: 655px;
+    height: 469px;
+    flex-shrink: 0;
+    margin-left: 170px; /* Aumenta a distância da esquerda */
+}
+
+.respostas-intrigantes {
+    width: 60%;
+    text-align: left;
+}
+
+.duvida h3 {
+    margin-top: 20px;
+    margin-left: 50px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 29.811px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.duvida p {
+    margin-left: 50px;
+    width: 640px;
+    height: 60px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.bloco-perguntas-imagem {
+    margin-top: 50px;
+    text-align: center; /* Centraliza o conteúdo dentro do bloco */
+}
+
+.imagem-largura-total {
+    width: 1429px; /* Dimensões específicas da imagem */
+    height: 765px;
+    flex-shrink: 0;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+.perguntas-container {
+    display: flex;
+    flex-direction: column; /* As perguntas ficam em coluna (uma embaixo da outra) */
+    margin-top: 20px;
+    align-items: flex-start; /* Alinha todas as perguntas à esquerda, exceto a terceira */
+}
+
+.pergunta-left1 {
+    margin-left: 200px;
+    text-align: left; /* Alinha à esquerda */
+    width: 100%; /* As perguntas ocupam 100% da largura disponível */
+    margin-bottom: 20px;
+}
+
+.pergunta-left3 {
+    margin-left: 200px;
+    text-align: left; /* Alinha à esquerda */
+    width: 100%; /* As perguntas ocupam 100% da largura disponível */
+    margin-bottom: 20px;
+}
+
+.pergunta-left2 {
+    text-align: right; /* Alinha à direita */
+    width: 100%; /* A pergunta à direita ocupa 100% da largura */
+    margin-bottom: 20px;
+}
+
+.pergunta-right {
+    margin-left: 200px;
+    text-align: left; /* Alinha à esquerda */
+    width: 100%; /* As perguntas ocupam 100% da largura disponível */
+    margin-bottom: 20px;
+}
+
+/* Alinha a pergunta 4 à esquerda */
+.pergunta-left:nth-of-type(4) {
+    margin-right: 1000px;
+}
+
+.pergunta-left1 h3, .pergunta-right h3, .pergunta-left3 h3 {
+    margin-top: -10px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 49.811px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+}
+
+.pergunta-left1 p, .pergunta-left3 p, .pergunta-right p {
+    width: 655px;
+    height: 51px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pergunta-left2 h3{
+    margin-top: -10px;
+    margin-right: 190px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 49.811px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+}
+
+
+.pergunta-left2 p{
+    text-align: left;
+    margin-left: 900px;
+    width: 555px;
+    height: 51px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Alinha a resposta da pergunta 3 à direita */
+.pergunta-left:nth-of-type(3) p {
+    margin-left: 1000px;
+    text-align: right; /* Alinha a resposta da pergunta 3 à direita */
+}
+
+
+.bloco-imagem-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+.imagem-esquerda25 {
+    margin-left: 100px;
+    width: 900px;
+    height: 784px;
+    flex-shrink: 0;
+}
+
+.titulo-direita {
+    margin-top: -40px;
+    margin-right: 100px;
+    width: 459.355px;
+    height: 623px;
+    flex-shrink: 0;
+    color: #D3B473;
+    font-family: "Playfair Display";
+    font-size: 122.818px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-variant: all-small-caps;
+    
+    border: none; /* Remove qualquer borda */
+    outline: none; /* Remove contornos */
+    text-decoration: none; /* Remove sublinhados */
+    background: none; /* Remove qualquer fundo que possa estar a gerar linhas */
+}
+
+.titulo-direita::before,
+.titulo-direita::after {
+    content: none !important;
+    display: none !important;
+}
+
+
+
+.caixa-imagem-faq {
+    display: flex;
+    align-items: flex-start; /* Alinha o topo da imagem com a primeira pergunta */
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.sessao-perguntas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+}
+
+.bloco-duvida {
+    width: 600px;
+    text-align: left;
+    margin-bottom: 20px; /* Reduzi o espaçamento entre perguntas */
+}
+
+.bloco-duvida h3 {
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 39.811px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+    margin-bottom: 5px;
+}
+
+.bloco-duvida p {
+    padding-right: 50px;
+    margin-top: 10px; /* Reduzi ainda mais o espaço entre pergunta e resposta */
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bloco-imagem {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 100px;
+}
+
+.foto-destacada {
+    width: 800px;
+    height: auto;
+    align-self: flex-start; /* Garante que a imagem alinhe com o topo da primeira pergunta */
+}
+
+.titulo-relacionado {
+    width: 812px;
+    height: 353.647px;
+    flex-shrink: 0;
+    color: #D3B473;
+    font-family: "Playfair Display";
+    font-size: 55.015px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-variant: all-small-caps;
+}
+
+
+.nova-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -300px; /* Adiciona um espaço entre as seções */
+}
+
+.conteudo-esquerdo {
+    width: 50%; /* Deixa a parte do conteúdo ocupar metade do espaço */
+    padding-right: 30px; /* Adiciona espaço à direita do texto */
+}
+
+.titulo-esquerdo {
+    margin-top: 400px;
+    margin-left: 90px;
+    width: 436px;
+    height: 193px;
+    flex-shrink: 0;
+    color: #B2A7AC;
+    font-family: "Playfair Display";
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.titulo-esquerdo::before,
+.titulo-esquerdo::after {
+    content: none !important;
+    display: none !important;
+}
+
+.subtitulo-esquerdo {
+    margin-top: -100px;
+    margin-left: 100px;
+    width: 460px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 53.878px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.texto-esquerdo {
+    margin-left: 100px;
+    width: 640px;
+    height: 316px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.imagens-direita {
+    width: 1100px;
+    height: 100px;
+    margin-top: 300px;
+    margin-right: -150px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre as imagens */
+}
+
+.imagem-direita2 {
+    margin-right: -50px;
+    margin-top: -950px;
+    width: 177px;
+    height: 279px;
+    flex-shrink: 0;
+}
+
+
+.imagem-com-texto {
+    text-align: left; /* Alinha o texto à esquerda */
+    margin-top: 50px; /* Adiciona um espaço entre a imagem e o conteúdo acima */
+}
+
+.imagem-total {
+    margin-top: 50px;
+    margin-left:100px;
+    width: 90%; /* A imagem ocupa toda a largura da página */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.texto-abaixo {
+    margin-left: 100px;
+    margin-top: -170px;
+    width: 930px;
+    height: 169px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+
+
+.bloco-contato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -110px;
+}
+
+.lado-esquerdo {
+    width: 45%;
+    position: relative;
+}
+
+.imagem-esquerda1 {
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 687px;
+    height: 429px;
+    flex-shrink: 0;
+}
+
+.caixa-roxa {
+    margin-top: -22px;
+    margin-left: 103px;
+    flex-shrink: 0;
+    width: 680px;
+    height: 279px;
+    border-radius: 0px 0px 12px 12px;
+    background: #B2A7AC;
+    padding-top: 30px; /* Adicionando espaço para descer o texto */
+}
+
+.caixa-roxa p {
+    margin-left: 30px;
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 16.214px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 10px; /* Ajuste adicional para garantir o espaçamento do texto */
+}
+
+.botao-contato {
+    margin-left: 455px;
+    margin-top: -100px;
+    background: none;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    color: #ffffff;
+    padding: 15px 40px; /* Ajustado */
+    font-size: 1.5em; /* Ajustado */
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.botao-contato:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.Line56 {
+    margin-left: 150px;
+    margin-top: 100px;
+    width: 120px; 
+    height: 950px; 
+    background-color: #B2A7AC; 
+    border: none; 
+}
+
+.linha-roxa {
+    margin-right: 20px;
+    margin-top: 1050px;
+    width: 2px;
+    height: 100%;
+    background-color: #B2A7AC;
+    position: relative;
+}
+
+.linha-roxa::before {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Coloca o círculo na ponta inferior */
+    left: 50%;  /* Centraliza na linha */
+    transform: translateX(-50%); /* Ajuste fino para centralizar */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #B2A7AC;
+}
+
+
+/* Alinhamento dos lados */
+.lado-direito {
+    margin-top: -50px;
+    width: 45%;
+    text-align: left;
+}
+
+.lado-direito h3 {
+    margin-left: 50px;
+    margin-top: -20px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 439px;
+}
+
+.lado-direito p {
+    margin-left: 50px;
+    width: 609px;
+    height: 257px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.bloco-novo {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.titulo-esquerda {
+    margin-top: -500px;
+    margin-left: 10px;
+    width: 320.214px;
+    height: 220.702px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 93.153px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 103.847%; /* 96.737px */
+}
+
+.titulo-esquerda::before,
+.titulo-esquerda::after {
+    content: none !important;
+    display: none !important;
+}
+
+.imagens-laterais {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 93.153px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 103.847%; /* 96.737px */
+}
+
+.imagem-esquerda{
+    margin-left: 00px;
+    margin-top: -120px;
+    width: 325px;
+    height: 320.486px;
+    flex-shrink: 0;
+} 
+.imagem-direita {
+    margin-left: 90px;
+    width: 571px;
+    height: 661.028px;
+    flex-shrink: 0;
+}
+
+.conteudo-inferior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+}
+
+.imagem-inferior {
+    margin-top: -500px;
+    margin-left: -1070px;
+    width: 95px;
+    height: 454px;
+    flex-shrink: 0;
+}
+
+.subtitulo {
+    margin-top: -465px;
+    margin-left: -400px;
+    text-align: left;
+    width: 545px;
+    height: 334px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 28.98px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-variant: all-small-caps;
+}
+
+.texto-inferior span{
+    text-align: left;
+    width: 545px;
+    height: 334px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 24.485px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-variant: all-small-caps;
+}
+.texto-inferior {
+    margin-left: -400px;
+    margin-top: -175px;
+    text-align: left;
+    width: 545px;
+    height: 334px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 22.485px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: all-small-caps;
+}
+
+
+/*footer*/
+footer {
+    background: url('img/fundofooter.png') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding-bottom: -1px;
+}
+
+.footer-top img {
+    width: 220px;
+    align-self: flex-start;
+    margin-left: -10px;
+}
+
+.footer-top p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    border-bottom: 2px solid black;
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.contact-info h3{
+    margin-top: 10px;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 25.918px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.contact-info strong{
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 20.803px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+.contact-info p{
+    margin-top: -10px;
+    color: #000;
+    font-family: "Open Sans";
+    font-size: 14.803px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contact-info, .contact-form {
+    width: 48%;  /* Ajusta a largura para que os campos fiquem lado a lado */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;  /* Espaço entre os campos */
+}
+
+/* Divisão para os campos da esquerda e da direita */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Campos lado a lado */
+.contact-info input, .contact-info textarea,
+.contact-form input, .contact-form textarea {
+    margin: 6px 0;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+/* Efeito de hover para os botões */
+.contact-form button:hover, .contact-info button:hover {
+    background-color: #d4af37; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Alinhar os campos de 'nome' e 'email' à esquerda */
+.contact-info input {
+    width: 100%;  /* Campos ocupam toda a largura disponível */
+}
+
+/* Alinhar os campos de 'cidade' e 'assunto' à direita */
+.contact-form input {
+    width: 100%;  /* Campos ocupam toda a largura disponível */
+}
+
+/* Caixa de mensagem ocupa toda a largura */
+.contact-info textarea, .contact-form textarea {
+    width: 100%;
+    height: 120px;
+}
+
+/* Botões */
+.contact-form button {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.contact-info button {
+    padding: 0;
+    font-size: 0.8em;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Estilo para a política de privacidade */
+.policy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    font-size: 1em;
+    margin-top: 10px;
+    width: 100%; /* Faz com que a política ocupe toda a largura disponível */
+    max-width: 600px; /* Limita a largura para evitar que fique excessivamente largo */
+}
+
+.policy label {
+    display: inline-flex; /* Faz com que o rádio e o texto fiquem na mesma linha */
+    align-items: center; /* Alinha rádio e texto na vertical */
+    font-size: 1em;
+    margin-bottom: 5px; /* Espaço entre as linhas */
+}
+
+.policy input[type="radio"] {
+    margin-right: 10px; /* Espaçamento entre o rádio e o texto */
+    width: 18px; /* Tamanho do rádio */
+    height: 18px; /* Tamanho do rádio */
+    border-radius: 50%; /* Torna o checkbox redondo (bola) */
+    border: 2px solid #333; /* Cor do contorno */
+    background-color: white; /* Cor de fundo */
+}
+
+.policy input[type="radio"]:checked {
+    background-color: #4CAF50; /* Cor do fundo quando selecionado */
+    border-color: #4CAF50; /* Cor da borda quando selecionado */
+}
+
+.policy span {
+    margin-bottom: 15px;
+    margin-left: 25px;
+    font-family: "Open Sans";
+    font-size: 1em;
+    color: #000000;
+}
+
+
+/* Footer inferior */
+.footer-bottom {
+    margin-top: 25px;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 1em;
+}
+
+.footer-bottom p{
+    margin-left: 200px;
+    margin-top: -1px;
+    
+}
+
+.footer-bottom div {
+    flex: 1;
+}
+
+.footer-bottom div:nth-child(3) {
+    text-align: right;
+    margin-right: -10px;
+}
+
+.social-media a {
+    margin: 0 12px;
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustar o menu para telas menores */
+    .menu-container {
+        flex-direction: row;
+        padding: 10px 20px;
+        justify-content: space-between;
+        width: 100%; /* Garantir que a container cubra toda a largura da tela */
+    }
+
+    /* Logo à esquerda */
+    .logo-img {
+        width: 100px; /* Ajustar o tamanho do logo */
+        height: auto;
+    }
+
+    /* Menu à direita em linha horizontal e ocupar toda a tela */
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px; /* Espaçamento mínimo entre as opções */
+        width: 100%; /* Garantir que o menu ocupe toda a largura */
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 5px; /* Diminuir ainda mais o espaço entre os itens */
+        margin: 0;
+        padding: 0;
+        flex-wrap: nowrap;
+        width: 100%; /* Garantir que a lista ocupe toda a largura */
+    }
+
+    .menu ul li button {
+        font-size: 9px; /* Diminuir mais o tamanho da fonte */
+        padding: 4px 8px; /* Diminuir ainda mais o padding */
+        background-color: #99AABF;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.7);
+        transition: background-color 0.3s, box-shadow 0.3s;
+        flex-shrink: 1; /* Garantir que os itens encolham se necessário */
+    }
+
+    .menu ul li button:hover {
+        background-color: rgba(255, 221, 147, 1.0);
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+        flex-direction: column; /* Mudar para layout de coluna */
+        padding: 30px 20px; /* Reduzir o padding */
+    }
+
+    .text-container {
+        margin-top: 20px; /* Reduzir a margem superior */
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .image {
+        width: 100%; /* Fazer a imagem ocupar 100% da largura */
+    }
+
+    .image-section {
+        width: 100%; /* Fazer a seção de imagem ocupar 100% da largura */
+        height: auto; /* Altura automática */
+        padding: 20px; /* Reduzir o padding */
+    }
+
+    .section-title {
+        width: 60%; /* Ajustar a largura do título */
+        margin-right: 0; /* Remover a margem direita */
+    }
+
+    .section-content {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .section-text {
+        margin-right: 0; /* Remover a margem direita */
+    }
+
+    .section-image {
+        margin-top: 20px; /* Ajustar a margem superior */
+    }
+
+    .qr-container {
+        flex-direction: column; /* Mudar para layout de coluna */
+        height: auto; /* Altura automática */
+    }
+
+    .qr-image-container {
+        padding: 20px; /* Reduzir o padding */
+    }
+
+    .qr-text-container {
+        padding: 20px; /* Reduzir o padding */
+    }
+
+    h2 {
+        font-size: 60px; /* Reduzir o tamanho da fonte */
+    }
+
+    .custom-container {
+        margin-top: 0; /* Remover a margem superior */
+    }
+
+    .custom-section-1 {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .custom-image-left {
+        width: 100%; /* Fazer a imagem ocupar 100% da largura */
+        height: auto; /* Altura automática */
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .custom-text-right h3 {
+        margin-top: 20px; /* Ajustar a margem superior */
+        margin-left: 0; /* Remover a margem esquerda */
+        width: 100%; /* Fazer o texto ocupar 100% da largura */
+    }
+
+    .custom-text-right p {
+        margin-left: 0; /* Remover a margem esquerda */
+        width: 100%; /* Fazer o texto ocupar 100% da largura */
+    }
+
+    .custom-section-2 {
+        margin-top: 230px;
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .custom-text-left {
+        width: 100%; /* Fazer o texto ocupar 100% da largura */
+    }
+
+    .custom-images-right {
+        width: 100%; /* Fazer as imagens ocuparem 100% da largura */
+        justify-content: space-around; /* Distribuir as imagens */
+    }
+
+    .custom-small-image1 {
+        margin-top: 210px;
+        margin-left:-250px;
+    }
+   .custom-small-image2 {
+        margin-top: 210px;
+        margin-right:-70px;
+    }
+
+    .container-imagens-texto {
+        flex-direction: column; /* Mudar para layout de coluna */
+        margin-top: 50px; /* Ajustar a margem superior */
+    }
+
+    .imagem-esquerda-classe, .imagem-direita-classe {
+        margin: 0; /* Remover as margens */
+        width: 100%; /* Fazer as imagens ocuparem 100% da largura */
+    }
+
+    .titulo-secao {
+        margin-left: 0; /* Remover a margem esquerda */
+        margin-bottom: 20px; /* Ajustar a margem inferior */
+    }
+
+    .texto-centro {
+        width: 100%; /* Fazer o texto ocupar 100% da largura */
+    }
+
+    .custom-section-azeite {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .azeite-left, .azeite-right {
+        width: 100%; /* Fazer as seções ocuparem 100% da largura */
+    }
+
+    .azeite-left h1 {
+        font-size: 80px; /* Reduzir o tamanho da fonte */
+    }
+
+    .azeite-left h3 {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .azeite-left .azeite-image {
+        margin-left: 0; /* Remover a margem esquerda */
+        width: 100%; /* Fazer a imagem ocupar 100% da largura */
+    }
+
+    .azeite-right {
+        margin-right: 0; /* Remover a margem direita */
+    }
+
+    .custom-section-azeite-bottom {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .azeite-text-left {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .azeite-image-right {
+        width: 100%; /* Fazer as imagens ocuparem 100% da largura */
+    }
+
+    .azeite-text-right {
+        margin-right: 0; /* Remover a margem direita */
+    }
+
+    .azeite-image-small {
+        margin-right: 0; /* Remover a margem direita */
+    }
+
+    .bloco-curioso {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .imagem-oliveira {
+        margin-left: 0; /* Remover a margem esquerda */
+        width: 100%; /* Fazer a imagem ocupar 100% da largura */
+    }
+
+    .respostas-intrigantes {
+        width: 100%; /* Fazer o texto ocupar 100% da largura */
+    }
+
+    .bloco-perguntas-imagem {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .imagem-largura-total {
+        width: 100%; /* Fazer a imagem ocupar 100% da largura */
+    }
+
+    .perguntas-container {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .pergunta-left1, .pergunta-left2, .pergunta-left3, .pergunta-right {
+        margin-left: 0; /* Remover a margem esquerda */
+        width: 100%; /* Fazer as perguntas ocuparem 100% da largura */
+    }
+
+    .pergunta-left2 p {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .bloco-imagem-titulo {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .imagem-esquerda25 {
+        margin-left: 0; /* Remover a margem esquerda */
+        width: 100%; /* Fazer a imagem ocupar 100% da largura */
+    }
+
+    .titulo-direita {
+        margin-right: 0; /* Remover a margem direita */
+        width: 100%; /* Fazer o título ocupar 100% da largura */
+    }
+
+    .caixa-imagem-faq {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .sessao-perguntas {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .bloco-duvida {
+        width: 100%; /* Fazer as perguntas ocuparem 100% da largura */
+    }
+
+    .bloco-imagem {
+        margin-right: 0; /* Remover a margem direita */
+    }
+
+    .foto-destacada {
+        width: 100%; /* Fazer a imagem ocupar 100% da largura */
+    }
+
+    .titulo-relacionado {
+        width: 100%; /* Fazer o título ocupar 100% da largura */
+    }
+
+    .nova-div {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .conteudo-esquerdo {
+        width: 100%; /* Fazer o conteúdo ocupar 100% da largura */
+    }
+
+    .titulo-esquerdo {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .subtitulo-esquerdo {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .texto-esquerdo {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .imagens-direita {
+        width: 100%; /* Fazer as imagens ocuparem 100% da largura */
+    }
+
+    .imagem-direita2 {
+        margin-right: 0; /* Remover a margem direita */
+    }
+
+    .imagem-com-texto {
+        margin-top: 20px; /* Ajustar a margem superior */
+    }
+
+    .imagem-total {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .texto-abaixo {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .bloco-contato {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .lado-esquerdo {
+        width: 100%; /* Fazer o conteúdo ocupar 100% da largura */
+    }
+
+    .imagem-esquerda1 {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .caixa-roxa {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .botao-contato {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .lado-direito {
+        width: 100%; /* Fazer o conteúdo ocupar 100% da largura */
+    }
+
+    .lado-direito h3 {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .lado-direito p {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .bloco-novo {
+        margin-top: 20px; /* Ajustar a margem superior */
+    }
+
+    .topo {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .titulo-esquerda {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .imagens-laterais {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .imagem-esquerda, .imagem-direita {
+        margin: 0; /* Remover as margens */
+        width: 100%; /* Fazer as imagens ocuparem 100% da largura */
+    }
+
+    .conteudo-inferior {
+        width: 100%; /* Fazer o conteúdo ocupar 100% da largura */
+    }
+
+    .imagem-inferior {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .subtitulo {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .texto-inferior {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    footer {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .footer-top {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .footer-top img {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .footer-top p {
+        margin-top: 10px; /* Ajustar a margem superior */
+    }
+
+    .footer-middle {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .contact-info, .contact-form {
+        width: 100%; /* Fazer os campos ocuparem 100% da largura */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Mudar para layout de coluna */
+    }
+
+    .footer-bottom p {
+        margin-left: 0; /* Remover a margem esquerda */
+    }
+
+    .social-media a {
+        margin: 0 5px; /* Reduzir o espaçamento entre os ícones */
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+    .menu-container {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .logo-img {
+        width: 80px; /* Reduzir o tamanho do logo */
+    }
+
+    .menu ul li button {
+        font-size: 12px; /* Reduzir o tamanho da fonte dos botões */
+        padding: 5px 10px; /* Reduzir o padding dos botões */
+    }
+
+    .container {
+        padding: 20px 10px; /* Reduzir o padding */
+    }
+
+    .text-container {
+        margin-top: 10px; /* Reduzir a margem superior */
+    }
+
+    .image-section {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .section-title {
+        width: 80%; /* Ajustar a largura do título */
+    }
+
+    .qr-container {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    h2 {
+        font-size: 40px; /* Reduzir o tamanho da fonte */
+    }
+
+    .custom-section-1 {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .custom-section-2 {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .container-imagens-texto {
+        margin-top: 20px; /* Ajustar a margem superior */
+    }
+
+    .custom-section-azeite {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .azeite-left h1 {
+        font-size: 50px; /* Reduzir o tamanho da fonte */
+    }
+
+    .bloco-curioso {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .bloco-perguntas-imagem {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .bloco-imagem-titulo {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .caixa-imagem-faq {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .nova-div {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .imagem-com-texto {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .bloco-contato {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    .bloco-novo {
+        padding: 10px; /* Reduzir o padding */
+    }
+
+    footer {
+        padding: 5px; /* Reduzir o padding */
+    }
+
+    .footer-top p {
+        font-size: 18px; /* Reduzir o tamanho da fonte */
+    }
+
+    .contact-info h3 {
+        font-size: 20px; /* Reduzir o tamanho da fonte */
+    }
+
+    .contact-info strong {
+        font-size: 16px; /* Reduzir o tamanho da fonte */
+    }
+
+    .contact-info p {
+        font-size: 12px; /* Reduzir o tamanho da fonte */
+    }
+
+    .footer-bottom p {
+        font-size: 14px; /* Reduzir o tamanho da fonte */
+    }
+
+    .social-media a {
+        font-size: 14px; /* Reduzir o tamanho da fonte */
+    }
+}

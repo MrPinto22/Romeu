@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', serif;
+    line-height: 1.6;
+    background: url('img/backgroundpaginafinal.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 15%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0);
+    padding: 10px 230px;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.logo-img {
+    width: 150px;
+    height: auto;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    overflow: visible; /* Certificar que o dropdown não é cortado */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    display: inline-flex;
+    position: relative; /* Necessário para o dropdown */
+}
+
+.menu ul li button {
+    background-color: #99AABF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.7);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.menu ul li button:hover {
+    background-color: rgba(255, 221, 147, 1.0);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* Caixa de Texto (Degradê) */
+.cookie-accept-container {
+    width: 980px;
+    height: 732px;
+    flex-shrink: 0;
+    background: url('img/Rectangle50.png');
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    z-index: 2; /* Mantém o conteúdo acima */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Texto */
+.cookie-accept-container p {
+    color: #FFF;
+    text-align: center;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Playfair Display";
+    font-size: 51.696px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 133.307%; /* 68.914px */
+    font-variant: small-caps;
+}
+
+/* Caixa de Vídeo */
+.video-container {
+    width: 60;
+    height: 53%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1; /* Por trás do degradê */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease-in-out;
+    background-color: black;
+    border-radius: 15px;
+}
+
+/* Ajuste do Vídeo */
+#cookie-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustar o menu para telas menores */
+    .menu-container {
+        flex-direction: row;
+        padding: 10px 20px;
+        justify-content: space-between;
+        width: 100%; /* Garantir que a container cubra toda a largura da tela */
+    }
+
+    /* Logo à esquerda */
+    .logo-img {
+        width: 100px; /* Ajustar o tamanho do logo */
+        height: auto;
+    }
+
+    /* Menu à direita em linha horizontal e ocupar toda a tela */
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px; /* Espaçamento mínimo entre as opções */
+        width: 100%; /* Garantir que o menu ocupe toda a largura */
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 5px; /* Diminuir ainda mais o espaço entre os itens */
+        margin: 0;
+        padding: 0;
+        flex-wrap: nowrap;
+        width: 100%; /* Garantir que a lista ocupe toda a largura */
+    }
+
+    .menu ul li button {
+        font-size: 9px; /* Diminuir mais o tamanho da fonte */
+        padding: 4px 8px; /* Diminuir ainda mais o padding */
+        background-color: #99AABF;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.7);
+        transition: background-color 0.3s, box-shadow 0.3s;
+        flex-shrink: 1; /* Garantir que os itens encolham se necessário */
+    }
+
+    .menu ul li button:hover {
+        background-color: rgba(255, 221, 147, 1.0);
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    }
+
+
+
+    /* Ajustes na cookie-banner */
+    .cookie-banner {
+        width: 90%;
+        max-width: 380px; /* Ajustar o tamanho */
+        left: 50%;
+        transform: translateX(-50%); /* Centralizar */
+    }
+
+    /* Ajustar a hero section */
+    .hero {
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh; /* Garantir que ocupe toda a altura da tela */
+    }
+
+    /* Ajustar imagens para telas menores */
+    .cookie-accept-container {
+        margin-left: 10px;
+        width: 100%;
+        height: 700px;
+        max-width: 700px; /* Limitar o tamanho máximo */
+    }
+}
+
+/* Para dispositivos ainda menores (como smartphones de 320px de largura) */
+@media (max-width: 480px) {
+    /* Ajustar o logo para telas muito pequenas */
+    .logo-img {
+        width: 80px; /* Reduzir ainda mais o logo */
+    }
+
+    /* Reduzir ainda mais o tamanho do menu */
+    .menu ul li button {
+        font-size: 8px; /* Fonte ainda menor */
+        padding: 3px 6px; /* Reduzir o padding */
+    }
+
+    /* Ajustar a altura da hero section */
+    .hero {
+        min-height: 100vh; /* Garantir que ocupe toda a altura da tela */
+    }
+}

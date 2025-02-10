@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Menu Transparente</title>
+    <link rel="stylesheet" href="indexaltern.css">
+    <script defer src="script.js"></script> <!-- Adiciona o JavaScript -->
+</head>
+<body>
+    <header class="menu-container">
+        <div class="logo">
+            <a href="indexaltern.html"><img src="img/logo2.png" alt="Logo" class="logo-img"></a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <a href="historia.html"><li><button>História</button></li></a>
+                <a href="quemsomos.html"><li><button>Quem Somos</button></li></a>
+                <a href="turismo.html"><li><button>Turismo</button></li></a>
+                <a href="https://quintadoromeu.pt/"><li><button>Loja Online</button></li></a>
+                <a href="info.html"><li><button>Info</button></li></a>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- Tela Inicial de Imagem -->
+
+<!-- Seu conteúdo principal vai logo em seguida... -->
+<section id="home" class="hero">
+    <div class="cookie-accept-container" id="cookie-container">
+        <p id="cookie-text">
+            No Romeu nada é plano. <br> 
+            Nem os aromas, <br> 
+            nem a paisagem, <br> 
+            nem o clima… <br> 
+            nem as pessoas!
+        </p>
+    </div>
+    <div class="video-container" id="video-container">
+        <video id="cookie-video" controls>
+            <source src="img/videoquinta.mp4" type="video/mp4">
+            Seu navegador não suporta o formato de vídeo.
+        </video>
+    </div>
+</section>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let cookieContainer = document.querySelector(".cookie-accept-container");
+    let videoContainer = document.querySelector(".video-container");
+    let introImage = document.querySelector("#intro-image"); // Seção de imagem
+    const video = document.querySelector('#cookie-video');
+
+    // Após 3 segundos, esconder a tela inicial de imagem
+    setTimeout(function () {
+        introImage.style.opacity = "0"; // Desvanecer a tela de introdução
+        setTimeout(function () {
+            introImage.style.display = "none"; // Remover da tela
+        }, 500); // Tempo para desaparecer suavemente
+    }, 3000); // Exibe a imagem por 3 segundos
+
+    // Após 4 segundos, ocultar o degradê e mostrar o vídeo
+    setTimeout(function () {
+        cookieContainer.style.opacity = "0"; // Desvanecer o degradê
+        setTimeout(function () {
+            cookieContainer.style.display = "none"; // Esconder completamente após a transição
+            videoContainer.style.opacity = "1"; // Tornar o vídeo visível
+        }, 500); // Tempo para desaparecer suavemente
+
+        // Inicia a reprodução automática do vídeo
+        if (video) {
+            video.play(); // Reproduz o vídeo automaticamente
+        }
+    }, 4000); // Atraso inicial de 4 segundos
+});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Menu Transparente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="menu-container">
+        <div class="logo">
+            <a href="indexaltern.html"><img src="img\logo2.png" alt="Logo" class="logo-img"></a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <a href="historia.html"><li><button>História</button></li></a>
+                <a href="quemsomos.html"><li><button>Quem Somos</button></li></a>
+                <a href="turismo.html"><li><button>Turismo</button></li></a>
+                <a href="https://quintadoromeu.pt/"><li><button>Loja Online</button></li></a>
+                <a href="info.html"><li><button>Info</button></li></a>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section id="intro" class="intro-section">
+        <!-- Apenas o background, sem conteúdo -->
+    </section>
+    
+
+<!-- Section Hero -->
+<section id="home" class="hero">
+    <div class="cookie-accept-container" id="cookie-container">
+        <p id="cookie-text">No Romeu nada é plano. <br> Nem os aromas, <br> nem a paisagem, <br> nem o clima… <br> nem as pessoas!</p>
+        <div class="video-container" id="video-container">
+            <video id="cookie-video" controls>
+                <source src="img\videoquinta.mp4" type="video/mp4">
+                Seu navegador não suporta o formato de vídeo.
+            </video>
+        </div>
+    </div>
+</section>
+
+<section id="age-check" class="age-check-section">
+    <div class="age-check-content">
+        <div class="buttons">
+            <button id="yes-btn"><img src="img\Group35.png" alt=""></button>
+            <button id="no-btn"><img src="img\Group36.png" alt=""></button>
+        </div>
+    </div>
+</section>
+
+
+<!-- Formulário de Cookies -->
+<div class="cookie-banner" id="cookie-banner">
+    <p>Utilizamos cookies para melhorar a sua experiência no nosso website, personalizar conteúdos e analisar o tráfego. Ao continuar a navegar, concorda com a nossa política de cookies. Saiba mais ou ajuste as suas preferências.?</p>
+    <div class="cookie-buttons">
+        <button onclick="acceptCookies()">Aceitar</button>
+        <button onclick="declineCookies()">Recusar</button>
+        <button onclick="customizeCookies()">Personalizar</button>
+    </div>
+</div>
+    <!-- Link para o arquivo de script externo -->
+    <script>
+// Após 2 segundos, a primeira section (intro) desaparece
+setTimeout(function() {
+    document.getElementById('intro').classList.add('hide');
+}, 2000); // 2 segundos
+
+// Função para esconder a segunda section (verificação de idade) ao clicar nos botões
+document.getElementById('yes-btn').addEventListener('click', function() {
+    document.getElementById('age-check').classList.add('hide'); // Esconde a section de idade
+});
+
+document.getElementById('no-btn').addEventListener('click', function() {
+    document.getElementById('age-check').classList.add('hide'); // Esconde a section de idade
+});
+
+// Função para aceitar os cookies
+function acceptCookies() {
+    // Esconde o banner de cookies
+    document.getElementById('cookie-banner').style.display = 'none';
+    
+    // Mostra a section com o gradiente e o texto
+    const container = document.getElementById('cookie-container');
+    container.style.display = 'flex';
+    container.classList.add('show'); // Torna visível com animação
+    
+    // Após 3 segundos, esconde o texto e o fundo, e mostra o vídeo
+    setTimeout(function() {
+        // Esconde o texto e o fundo da section
+        document.getElementById('cookie-text').style.display = 'none';
+        document.getElementById('cookie-container').style.background = 'transparent'; // Fundo transparente
+        document.getElementById('video-container').style.display = 'block';
+          // Inicia a reprodução automática do vídeo
+          const video = document.querySelector('#video-container video');
+        if (video) {
+            video.play(); // Reproduz o vídeo automaticamente
+        }
+    }, 4000); // Aguarda 4 segundos antes de mostrar o vídeo
+}
+
+// Função para recusar os cookies
+function declineCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+
+</script>
+
+<script>
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const menu = document.querySelector('.menu');
+
+hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+
+</script>
+ 
+
+</body>
+</html>
